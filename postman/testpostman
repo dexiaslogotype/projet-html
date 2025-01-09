@@ -1,0 +1,8 @@
+pm.test("Statut est 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Contient les données attendues", function () {
+    const jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an('array');
+});
