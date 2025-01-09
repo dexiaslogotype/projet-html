@@ -1,105 +1,71 @@
-
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Petite Page HTML </title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation de formulaire</title>
     <style>
-        /* Style général de la page */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-
-        /* En-tête */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Section principale */
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Boutons stylés */
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            font-size: 16px;
-            color: white;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        /* Liste stylée */
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            background-color: #f0f0f0;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-        }
-
-        /* Pied de page */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            font-size: 0.9em;
-        }
+      #mon_form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 20px;
+        margin: auto;
+        max-width: 500px;
+        font-family: Arial, sans-serif;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      span.error-message {
+        color: red;
+        font-size: 0.9em;
+        display: none;
+      }
+      .error {
+        border-color: red;
+      }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Bienvenue sur ma page web stylée</h1>
-    </header>
-    
-    <section>
-        <p>Bonjour ! Ceci est un exemple de page HTML par Raphael Llorens.</p>
-        <p>ceci est le premier execrcice de notion API
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est iure, labore sit blanditiis optio nobis numquam suscipit molestias quasi fugiat consectetur rerum incidunt fuga. Hic neque perferendis provident quos voluptate..</p>
-        
-        
-        <a href="https://www.bing.com/search?pglt=41&q=efrei+villejuif&cvid=3fde32a956f64250b184fb6c2a0c6e4f&gs_lcrp=EgRlZGdlKgYIAxAAGEAyCQgAEEUYPBj5BzIGCAEQRRg5MgYIAhAuGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEEUYPDIGCAcQRRg8MgYICBBFGDzSAQg5MTI3ajBqMagCALACAA&FORM=ANNTA1&PC=ASTS" class="button">En savoir plus sur le l'ecole</a>
-    </section>
-    
-    <section>
-        <h2>Quelques éléments de HTML stylés</h2>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/raphael-llorens-01682830b "sclass="button">linkedin</a></li>
-            <li><a href="https://github.com/dashboard" class="button">depot github</a></li>
+  </head>
+  <body>
+    <form id="mon_form">
+      <h2>Formulaire d'inscription</h2>
 
-        </ul>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 - Raphael Llorens - B3</p>
-    </footer>
-</body>
+      <label for="first_name">Prénom :</label>
+      <input type="text" id="first_name" placeholder="Entrez votre prénom" />
+      <span class="error-message" id="error_first_name">Le champ prénom est obligatoire.</span>
+
+      <label for="last_name">Nom :</label>
+      <input type="text" id="last_name" placeholder="Entrez votre nom" />
+      <span class="error-message" id="error_last_name">Le champ nom est obligatoire.</span>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" placeholder="Entrez votre email" />
+      <span class="error-message" id="error_email">Veuillez entrer une adresse email valide.</span>
+
+      <label for="password">Mot de passe :</label>
+      <input type="password" id="password" placeholder="Entrez votre mot de passe" />
+      <span class="error-message" id="error_password">Le mot de passe est obligatoire.</span>
+
+      <label for="check_password">Confirmez le mot de passe :</label>
+      <input type="password" id="check_password" placeholder="Confirmez votre mot de passe" />
+      <span class="error-message" id="error_check_password">Les mots de passe ne correspondent pas.</span>
+
+      <button type="submit">Envoyer</button>
+    </form>
+    <script src="./script.js"></script>
+  </body>
 </html>
